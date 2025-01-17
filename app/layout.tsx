@@ -1,6 +1,5 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import WrappersWithOnlyPwa from '../components/wrappers/Wrappers'
 import Wrappers from '../components/wrappers/Wrappers'
 
 declare global {
@@ -12,7 +11,7 @@ declare global {
 export const metadata: Metadata = {
   manifest: '/manifest.json', // we are accessing our manifest file here
   title: 'Hand Protocol',
-  description: 'Supporting Public Good Projects'
+  description: 'Supporting Public Goods Projects'
 }
 
 export default function RootLayout({
@@ -22,6 +21,23 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-QDSF4BLDMF"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-QDSF4BLDMF');
+    `
+          }}
+        />
+      </head>
       <body>
         <Wrappers>{children}</Wrappers>
       </body>

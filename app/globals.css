@@ -3,16 +3,20 @@
 @tailwind utilities;
 
 @layer components {
-  .centered-row {
+  .center-row {
     @apply flex flex-row items-center justify-center;
   }
 
-  .centered-col {
+  .center-col {
     @apply flex flex-col items-center justify-center;
   }
 
   .start-center-row {
     @apply flex flex-row items-center justify-start;
+  }
+
+  .start-center-col {
+    @apply flex flex-col items-center justify-start;
   }
 
   .start-row {
@@ -35,7 +39,7 @@
     @apply flex flex-col items-end;
   }
 
-  .centered {
+  .center {
     @apply flex flex-col items-center justify-center w-full h-full;
   }
 
@@ -96,6 +100,11 @@
     box-sizing: border-box;
   }
 
+  /* Disable blue highlight on touch for all elements */
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
   .video-container {
     position: relative;
     overflow: hidden;
@@ -115,20 +124,20 @@
 
 :root {
   /* background */
-  --primary-background: #cfb3a1;
-  --secondary-background: #f5c6a9;
+  --p-background: #ebebeb;
+  --s-background: #ffffff;
 
   /* text */
-  --primary-text: #363534;
-  --secondary-text: #757372;
+  --p-text: #000000;
+  --s-text: #807b7b;
 }
 
 [data-theme='dark'] {
   /* background */
-  --primary-background: #000000;
-  --secondary-background: #272325;
+  --p-background: #000000;
+  --s-background: #2c2c2c;
 
   /* text */
-  --primary-text: #ffffff;
-  --secondary-text: #7b7a7b;
+  --p-text: #ffffff;
+  --s-text: #a7a7a7;
 }
