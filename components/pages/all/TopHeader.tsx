@@ -27,6 +27,11 @@ import { useAccount } from 'wagmi'
 
 export const menuItems: MenuItemProps[] = [
   {
+    name: 'Raise',
+    link: '/raise',
+    target: '_self'
+  },
+  {
     name: 'Team',
     link: '/',
     target: '_self'
