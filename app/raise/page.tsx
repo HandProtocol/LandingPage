@@ -19,7 +19,11 @@ import {
   Shield,
   Wrench,
   Globe,
-  Sparkles
+  Sparkles,
+  MapPin,
+  Repeat,
+  FileCheck,
+  Handshake
 } from 'lucide-react'
 import { GIVETH_LINK, DISCORD_INVITE_LINK, X_LINK } from '../../utils/config'
 import FooterSection from '../../components/pages/home/FooterSection'
@@ -447,6 +451,7 @@ export default function RaisePage() {
               { icon: Shield, title: 'Milestone Tracking', text: 'Public reporting via attestation and impact platforms. Deliverables documented, not assumed.' },
               { icon: Clock, title: 'Long-Term Stewardship', text: 'Maintained continuity with supported projects\u2014the exact long-term commitment this nonprofit formalizes.' },
               { icon: Eye, title: 'Donor Transparency', text: 'Contributions tracked and acknowledged transparently, reinforcing trust and ethical stewardship.' },
+              { icon: Sparkles, title: 'Creative & Cultural Infrastructure', text: 'Supported creative practitioners and cultural projects\u2014using art, music, and storytelling to make complex systems accessible.' },
               { icon: Wrench, title: 'Tooling Prototypes', text: 'Designed and tested donation tooling, onboarding mechanisms, and impact verification flows.' }
             ].map(({ icon: Icon, title, text }) => (
               <motion.div key={title} variants={staggerItem} className="bg-s-bg rounded-xl p-5 sm:p-6 start-col gap-y-3 hover:shadow-md transition-shadow duration-200">
@@ -596,8 +601,8 @@ export default function RaisePage() {
 
             {[
               { phase: 'Phase 1', period: 'Months 1\u20132', title: 'Foundation Setup', items: ['Nonprofit formation and tax-exempt filing', 'Operational systems established', 'Community advisory group formed'] },
-              { phase: 'Phase 2', period: 'Months 3\u20136', title: 'Pilot Program Launch', items: ['Onboard first cohort of local healers', 'Deliver branding, marketing, and development support', 'Begin intake for impact entrepreneurs and organizations'] },
-              { phase: 'Phase 3', period: 'Months 7\u201312', title: 'Proof & Refinement', items: ['Measure outcomes and refine processes', 'Publish transparent impact documentation', 'Prepare replication framework for other cities'] }
+              { phase: 'Phase 2', period: 'Months 3\u20136', title: 'Pilot Program Launch', items: ['Onboard first cohort of local healers', 'Deliver branding, marketing, and development support', 'Implement automated support systems', 'Begin intake for impact entrepreneurs and organizations'] },
+              { phase: 'Phase 3', period: 'Months 7\u201312', title: 'Proof & Refinement', items: ['Measure outcomes and refine processes', 'Publish transparent impact documentation', 'Expand to additional practitioners and organizations', 'Prepare replication framework for other cities'] }
             ].map(({ phase, period, title, items }) => (
               <motion.div key={phase} variants={staggerItem} className="start-col gap-y-2 relative">
                 <div className="absolute -left-[22px] sm:-left-[30px] top-1 w-3 h-3 rounded-full bg-amber-500 border-2 border-p-bg" />
@@ -633,7 +638,7 @@ export default function RaisePage() {
               { number: '10', label: 'Healers with sustained branding & operational infrastructure' },
               { number: '5', label: 'Impact entrepreneurs with long-term development support' },
               { number: '3', label: 'Impact organizations with operational systems & outreach' },
-              { number: '1', label: 'Replicable model ready to expand beyond Austin' }
+              { number: '\u2713', label: 'Transparent documentation of every engagement and lesson learned' }
             ].map(({ number, label }) => (
               <motion.div key={number} variants={staggerItem} className="bg-s-bg rounded-xl p-5 center-col text-center gap-y-2">
                 <span className="text-4xl font-bold text-amber-600">{number}</span>
@@ -644,8 +649,95 @@ export default function RaisePage() {
         </AnimatedSection>
       </section>
 
-      {/* ─── Contribution Tiers ─── */}
+      {/* ─── Long-Term Vision ─── */}
       <section className="w-full box-border bg-s-bg px-4 sm:px-14 py-16 sm:py-24">
+        <AnimatedSection className="max-w-[800px] mx-auto">
+          <motion.div variants={staggerItem} className="text-center mb-10 sm:mb-14">
+            <span className="text-xs font-bold text-amber-600 uppercase tracking-widest">Long-Term Vision</span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-p-text mt-2">
+              Scale without losing locality.
+            </h2>
+            <p className="text-s-text text-base font-semibold mt-3 max-w-[500px] mx-auto">
+              HAND Protocol is designed to grow while keeping what matters most&mdash;local trust and real relationships.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {[
+              { icon: MapPin, text: 'Additional local impact sectors beyond healing' },
+              { icon: Repeat, text: 'Replication in other cities with aligned communities' },
+              { icon: Handshake, text: 'Deeper integration with regenerative funding and donation tools' },
+              { icon: Users, text: 'Network effects where supported practitioners support each other' }
+            ].map(({ icon: Icon, text }) => (
+              <motion.div key={text} variants={staggerItem} className="bg-p-bg rounded-xl p-5 start-center-row gap-x-4">
+                <div className="shrink-0 w-10 h-10 center bg-amber-500/10 rounded-lg">
+                  <Icon className="w-5 h-5 text-amber-600" />
+                </div>
+                <p className="text-s-text text-sm font-semibold">{text}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div variants={staggerItem} className="text-center mt-8">
+            <p className="text-s-text text-base font-semibold italic">
+              But none of that matters without proof. Austin is the proof.
+            </p>
+          </motion.div>
+        </AnimatedSection>
+      </section>
+
+      {/* ─── Transparency & Trust ─── */}
+      <section className="w-full box-border px-4 sm:px-14 py-16 sm:py-24">
+        <AnimatedSection className="max-w-[700px] mx-auto center-col text-center">
+          <motion.div variants={staggerItem} className="mb-8">
+            <span className="text-xs font-bold text-amber-600 uppercase tracking-widest">Transparency & Trust</span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-p-text mt-2">We believe</h2>
+          </motion.div>
+
+          <div className="start-col gap-y-4 w-full">
+            {[
+              { icon: Shield, text: 'Trust is built through consistency, not promises' },
+              { icon: Heart, text: 'Infrastructure should serve people, not extract from them' },
+              { icon: FileCheck, text: 'Impact must be verifiable, not performative' }
+            ].map(({ icon: Icon, text }) => (
+              <motion.div key={text} variants={staggerItem} className="bg-s-bg rounded-xl p-5 start-center-row gap-x-4 w-full">
+                <div className="shrink-0 w-10 h-10 center bg-amber-500/10 rounded-lg">
+                  <Icon className="w-5 h-5 text-amber-600" />
+                </div>
+                <p className="text-p-text text-base font-semibold text-left">{text}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.p variants={staggerItem} className="text-s-text text-sm font-semibold mt-6">
+            All major milestones, budgets, and outcomes will be documented and shared publicly.
+          </motion.p>
+        </AnimatedSection>
+      </section>
+
+      {/* ─── The Team ─── */}
+      <section className="w-full box-border bg-s-bg px-4 sm:px-14 py-16 sm:py-24">
+        <AnimatedSection className="max-w-[700px] mx-auto center-col text-center">
+          <motion.div variants={staggerItem} className="mb-6">
+            <span className="text-xs font-bold text-amber-600 uppercase tracking-widest">The Team</span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-p-text mt-2">
+              Building from within.
+            </h2>
+          </motion.div>
+
+          <motion.div variants={staggerItem} className="bg-p-bg rounded-2xl p-6 sm:p-8 text-center">
+            <p className="text-s-text text-base font-semibold leading-relaxed mb-4">
+              HAND Protocol is founded by practitioners and technologists rooted in Austin&rsquo;s wellness community&mdash;people who have experienced firsthand the gap between transformative healing work and the infrastructure needed to sustain it.
+            </p>
+            <p className="text-p-text text-base font-bold">
+              We&rsquo;re not building from the outside. We&rsquo;re building from within.
+            </p>
+          </motion.div>
+        </AnimatedSection>
+      </section>
+
+      {/* ─── Contribution Tiers ─── */}
+      <section className="w-full box-border px-4 sm:px-14 py-16 sm:py-24">
         <AnimatedSection className="max-w-[1000px] mx-auto">
           <motion.div variants={staggerItem} className="text-center mb-10 sm:mb-14">
             <span className="text-xs font-bold text-amber-600 uppercase tracking-widest">Contribution Tiers</span>
